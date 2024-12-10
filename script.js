@@ -38,17 +38,3 @@ themeToggleBtn.addEventListener('click', () => {
     themeToggleBtn.textContent = newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
   });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme') || 'light';
-
-  document.body.setAttribute('data-theme', currentTheme);
-  themeToggleBtn.textContent = currentTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-
-  themeToggleBtn.addEventListener('click', () => {
-    const newTheme = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeToggleBtn.textContent = newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-  });
-});
