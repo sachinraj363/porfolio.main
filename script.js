@@ -12,6 +12,19 @@
   });
 
   // Additional functionality (like theme toggle) can also be added here
+// script.js
+const themeToggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Apply saved theme on page load
+document.body.setAttribute('data-theme', currentTheme);
+
+// Toggle theme and save preference
+themeToggleBtn.addEventListener('click', () => {
+  const newTheme = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  document.body.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
   const themeToggleBtn = document.getElementById('theme-toggle');
   const currentTheme = localStorage.getItem('theme') || 'light';
 
